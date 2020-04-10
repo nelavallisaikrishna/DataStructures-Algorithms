@@ -44,6 +44,25 @@ function isPalindrome(str) {
 console.log(isPalindrome("level"));
 console.log(isPalindrome("A car, a man, a maraca"));
 
+/*Closure function*/
+
+let closure =  function () {
+    let i = 0;
+    return{
+        setI(k) {
+            i = k
+        },
+        getI(){
+            return i
+        }
+    }
+
+};
+
+let x = closure()
+x.setI(2)
+console.log(x.getI())
+
 
 
 
