@@ -2,9 +2,12 @@
 
 
 let array = [4,8,10,8,3,9,14,18,0,6,2,9,19];
-let sortedArray = array.sort();
+let sortedArray = array.sort(function (a,b) {
+return a -b
+});
 
 function binerySearch(arr, value) {
+    console.log(arr)
     var high = arr.length -1
     var low = 0
     var mid = 0
@@ -26,7 +29,7 @@ function binerySearch(arr, value) {
 
 let binaryResult = binerySearch(sortedArray, 9);
 console.log("binaryResult ----------------", binaryResult);
-let array2 = [4,8,10,8,3,9,14,18,0,6,2,9,19];
+
 
 
 
@@ -34,7 +37,7 @@ let array2 = [4,8,10,8,3,9,14,18,0,6,2,9,19];
 // Linear search
 
 
-
+let array2 = [4,8,10,8,3,9,14,18,0,6,2,9,19];
 let linearResult = linearSearch(array2, 9);
 console.log("linearResult ----------------", linearResult);
 
