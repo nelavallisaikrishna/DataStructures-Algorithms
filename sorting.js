@@ -32,34 +32,34 @@ console.log("result -----------------", bubbleSortResult)
 /*Merge Sort*/
 
 
-
-function mergeSort(arr) {
-    console.log("array ---------------------", arr)
-    if(arr.length === 1){
-        return arr
-    }
-    let center = Math.floor(arr.length/2)
-    let l = arr.slice(0,center)
-    let r = arr.slice(center)
-    return merge(mergeSort(l), mergeSort(r))
-}
-
-
-function merge(l,r){
-    console.log("merge ---------------------", l.length, r.length)
-    var result = []
-     while (l.length && r.length){
-        if(l[0] < r[0]){
-            result.push(l.shift())
-        }
-        else{
-            result.push(r.shift())
-        }
-     }
-     return [...result, ...l, ...r]
-}
-
-console.log(mergeSort(array));
+//
+// function mergeSort(arr) {
+//     console.log("array ---------------------", arr)
+//     if(arr.length === 1){
+//         return arr
+//     }
+//     let center = Math.floor(arr.length/2)
+//     let l = arr.slice(0,center)
+//     let r = arr.slice(center)
+//     return merge(mergeSort(l), mergeSort(r))
+// }
+//
+//
+// function merge(l,r){
+//     console.log("merge ---------------------", l.length, r.length)
+//     var result = []
+//      while (l.length && r.length){
+//         if(l[0] < r[0]){
+//             result.push(l.shift())
+//         }
+//         else{
+//             result.push(r.shift())
+//         }
+//      }
+//      return [...result, ...l, ...r]
+// }
+//
+// console.log(mergeSort(array));
 
 
 // madule.exports= {bubbleSorting, mergeSort}
