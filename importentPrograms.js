@@ -66,7 +66,7 @@ console.log("characterMap",isAnagram("map","pam"))
 // 2)
 
 ///finding one missing elelmet
-/*getMissingNo=((a, n)=>{
+getMissingNo=((a, n)=>{
     var i, total;
     total = (n + 1) * (n + 2) / 2;
     for (i = 0; i < n; i++) {
@@ -75,10 +75,9 @@ console.log("characterMap",isAnagram("map","pam"))
     }
     return total;
 })
-console.log(getMissingNo([1, 2, 4, 5, 6],5))*/
+console.log(getMissingNo([1, 2, 4, 5, 6],5))
 
 ///find multiple missing numbers
-/*
 getMultipleMissNumbers = (()=>{
     var numbers = [0,1,3,4,5,7,8,10,13]; // Missing 2,6
     var missing = [];
@@ -93,7 +92,7 @@ getMultipleMissNumbers = (()=>{
 console.log( missing )
 })
 
-getMultipleMissNumbers()*/
+getMultipleMissNumbers()
 
 
 //////method 3///
@@ -108,7 +107,7 @@ findMissElements=()=>{
     console.log("arrlength",arrlength)
     var missing = [];
     for(var i=0;i<=arrlength;i++){
-        // console.log("arr.indexOf(i)",arr.indexOf(i))
+        console.log("arr.indexOf(i)",arr.indexOf(i))
         if(arr.indexOf(i)<0){
             missing.push(i)
         }
@@ -697,19 +696,20 @@ console.log(threesumnoArray([12,3,1,2,-6,5,-8,6],0))
 
 
 // 14)////////
-unionArra = (array1,array2)=>{
-    var mapobject = {}
+let unionArra = function(array1,array2){
+    var newObj = {};
     for(var i=0;i<array1.length;i++){
-        mapobject[array1[i]] = array1[i]
+        newObj[array1[i]] = array1[i]
     }
     for(var j=0;j<array2.length;j++){
-        mapobject[array2[j]] = array2[j]
+        newObj[array2[j]] = array2[j]
     }
-    console.log("mapobject--------",mapobject)
+    return newObj;
+
 
 }
 
-console.log(unionArra([34,35,45,48,49], [44,55,34]))
+console.log(Object.values(unionArra([34,35,45,48,49], [44,55,34])))
 
 
 // intersectionArray = (array1,array2)=>{
