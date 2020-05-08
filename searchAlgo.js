@@ -15,7 +15,7 @@ function binerySearch(arr, value) {
     while(high >= low){
         mid = high+low/2
         if (arr[mid] === value){
-            return mid
+            return arr[mid]
         }
         else if(value > arr[mid] ){
             low = mid+1
@@ -24,11 +24,27 @@ function binerySearch(arr, value) {
         }
 
     }
-    return -1
 }
 
+// function binarySearch(arr,value) {
+//     var h = arr.length-1
+//     var l = 0;
+//     var m = 0;
+//     for(let i=0; i <arr.length; i++){
+//         m = h+l/2
+//         if(arr[m] === value){
+//             return arr[m]
+//         }else if(value > arr[m]){
+//             l = m+1
+//         }else{
+//             h = m-1
+//         }
+//     }
+//
+// }
 
-let binaryResult = binerySearch(sortedArray, 9);
+
+let binaryResult = binarySearch(sortedArray, 9);
 console.log("binaryResult ----------------", binaryResult);
 
 

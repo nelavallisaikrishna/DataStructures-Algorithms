@@ -1,18 +1,18 @@
 var names = ["saikrishna", "harika", "suguna"]
 
 
-console.log(names.sort(1))
+console.log(names.sort(-1))
 
 var a = [1,2,3];
 var b = [1,4,5];
 
-console.log("datsta ===================", a.slice(1,1))
+console.log("datsta ===================", a.slice(1,2))
 
 
 // Remove Duplicates from array
 let a = [1,2,5,2,1,8]
 let b = [];
-let len = a.length
+let len = a.length;
 for (let i of a){
     console.log(i)
     if (b.indexOf(i) === -1){

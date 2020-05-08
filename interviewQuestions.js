@@ -81,7 +81,7 @@ function binarySearch(arr,value) {
     var h = arr.length-1
     var l = 0;
     var m = 0;
-    for(let i=0; i <arr.length; i++){
+    while(h >= l){
         m = h+l/2
         if(arr[m] === value){
             return arr[m]
@@ -222,6 +222,147 @@ function matrix(n) {
 }
 
 matrix(3)
+
+
+var findduplicate=(arr) => {
+    var duplicates = [];
+    arr.sort((a,b) => (a-b));
+    console.log(arr);
+    var temp = "";
+    for(let i=0; i< arr.length; i++){
+        if( arr[i] !== temp){
+            temp = arr[i]
+        }else if(duplicates.indexOf(arr[i]) < 0){
+            duplicates.push(arr[i])
+        }
+    }
+    return duplicates
+
+
+}
+
+console.log("findduplicate----------------------------",findduplicate([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]))
+
+
+
+function findMinMax(arr) {
+    let min = arr[0]
+    let max = arr[0]
+    for(let i of arr){
+        min = i < min ? i : min
+        max = i > max ? i : max
+    }
+    return [min, max]
+}
+console.log("findMinMax",findMinMax([5,8,9,7,15]))
+
+let unionArra = function(array1,array2){
+    for(let i of array2){
+        if(array1.indexOf(i) < 0){
+            array1.push(i)
+        }
+    }
+    return array1
+    // var newObj = {};
+    // for(var i=0;i<array1.length;i++){
+    //     newObj[array1[i]] = array1[i]
+    // }
+    // for(var j=0;j<array2.length;j++){
+    //     newObj[array2[j]] = array2[j]
+    // }
+    // return Object.values(newObj);
+
+
+}
+
+console.log(unionArra([34,35,45,48,49], [44,55,34]))
+
+
+
+
+
+function sortArray(a) {
+
+    let i=0;
+    let j=  a.length-1
+    while(1){
+        while(a[i] < 0 && i < j){
+            i++
+        }
+        while(a[j] > 0 && i < j){
+            j--
+        }
+        if(i<j){
+            var temp = a[i]
+            a[i] = a[j]
+            a[j] = temp
+        }else{
+            break
+        }
+    }
+    return a
+
+}
+
+
+console.log("test -------------", sortArray([-5, -2, -99, -45, 6, 23, 8, 4, -30, -10]))
+
+/*findDuplicateFrequency*/
+
+var array = [1,2,3,4,3,2,4,6,3,4,6]
+function findDuplicateFrequency(array) {
+    var obj={}
+    for (let i=0; i<array.length; i++){
+        if(obj[array[i]]){
+            console.log("...............................", obj[array[i]])
+            obj[array[i]]++
+        }else{
+            obj[array[i]] = 1
+        }
+
+    }
+    console.log("000000000000000000000000000000", obj)
+}
+
+findDuplicateFrequency(array)
+
+
+
+/*alternate array negative and positive*/
+
+
+var array = [2,-6,5,4,-7,-9,9,3,2,1,-3]
+
+function alternateArray(array) {
+    var positiveNu = 0
+    var negativeNu = 0
+
+    var negativeIndex = 1
+    for (let i=0; i < array.length; i++ ){
+        positiveNu = array[i]>0 ? positiveNu+1 : positiveNu;
+        negativeNu = array[i]<0 ? negativeNu+1 : negativeNu
+    }
+    console.log("iiiiiiiiiiiiiiiiiiiiiii", positiveNu, negativeNu)
+    for (let j=0; j<array.length; j++){
+        if(array[j] < 0){
+            let temp = array[j];
+            array[j] = array[negativeIndex];
+            array[negativeIndex] = temp;
+            if((negativeNu > positiveNu) && (negativeIndex < (positiveNu*2-2))){
+                negativeIndex += 2
+            }else if(negativeNu < positiveNu){
+                negativeIndex += 2
+            }else{
+                negativeIndex += 1
+            }
+        }
+    }
+
+    console.log("final --------------------------------------", array)
+
+
+}
+alternateArray(array)
 
 
 
